@@ -1,0 +1,45 @@
+# ============================================================
+# Multi-Document Comparator — Requirements
+# Python 3.12+
+# ============================================================
+
+# ── Core Framework ──────────────────────────────────────────
+streamlit>=1.35.0
+
+# ── LangChain ───────────────────────────────────────────────
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+langchain-openai>=0.1.0
+
+# ── PDF Processing ──────────────────────────────────────────
+pdfplumber>=0.11.0       # Pure-Python PDF text extraction (replaces PyMuPDF)
+pytesseract>=0.3.13      # OCR fallback for scanned pages
+Pillow>=10.3.0           # Image handling for OCR
+
+# ── Vector Database ─────────────────────────────────────────
+# chromadb replaced with numpy+json local vector store (avoids Rust DLL dependency)
+
+# ── Embeddings / LLM ────────────────────────────────────────
+ollama>=0.2.0            # Ollama Python client
+langchain-ollama>=0.1.0  # LangChain Ollama integration
+openai>=1.30.0           # OpenRouter uses OpenAI-compatible API
+
+# ── Token Counting ──────────────────────────────────────────
+tiktoken>=0.7.0
+
+# ── Text Processing ─────────────────────────────────────────
+unicodedata2>=15.1.0     # Extended Unicode normalization
+regex>=2024.4.16         # Advanced regex for cleaning
+
+# ── Environment ─────────────────────────────────────────────
+python-dotenv>=1.0.1
+
+# ── Export ──────────────────────────────────────────────────
+fpdf2>=2.7.9             # PDF export
+
+# ── Utilities ───────────────────────────────────────────────
+numpy>=1.26.0            # MMR cosine similarity
+scikit-learn>=1.4.0      # Cosine similarity in reranker
+tenacity>=8.3.0          # Retry logic for API calls
+httpx>=0.27.0            # HTTP client

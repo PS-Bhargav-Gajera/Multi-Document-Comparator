@@ -1,0 +1,74 @@
+=== Multi-Document Comparator — Run Process ===
+
+Project: C:\Users\BhargavGajera\OneDrive - ProductSquads Technolabs LLP\Desktop\PS\Learn\L1\Multi-Document-Comparator
+
+============================================================
+STEP 1 — Activate Virtual Environment
+============================================================
+
+Command:
+  .\venv\Scripts\activate
+
+Or directly use the venv Python:
+  .\venv\Scripts\python.exe
+
+============================================================
+STEP 2 — Install Dependencies (first time only)
+============================================================
+
+Command:
+  .\venv\Scripts\pip.exe install -r requirements.txt
+
+============================================================
+STEP 3 — Configure Environment Variables
+============================================================
+
+File: .env (already present in project root)
+Key variables:
+  - OPENROUTER_API_KEY     → LLM API key
+  - OLLAMA_BASE_URL        → Ollama server URL (default: http://localhost:11434)
+  - EMBED_MODEL            → Embedding model name
+
+============================================================
+STEP 4 — Run the Streamlit App
+============================================================
+
+Command:
+  .\venv\Scripts\streamlit.exe run app.py
+
+Optional flags:
+  --server.headless true     # Skip email prompt
+  --server.port 8501         # Custom port (default 8501)
+
+============================================================
+STEP 5 — Access the App
+============================================================
+
+Open in browser:
+  http://localhost:8501
+
+============================================================
+STEP 6 — Stop the Server
+============================================================
+
+Press Ctrl+C in the terminal where Streamlit is running.
+
+If server lingers, kill the process:
+  netstat -ano | findstr :8501
+  taskkill /PID <PID> /F
+
+============================================================
+PROJECT STRUCTURE OVERVIEW
+============================================================
+
+  app.py              → Main entry point (Streamlit)
+  config.py           → Configuration from .env
+  requirements.txt    → Python dependencies
+  .env                → Environment variables (API keys, settings)
+  rag/                → RAG pipeline, embeddings, retrieval, LLM
+  frontend/           → Streamlit UI components (sidebar, upload, compare)
+  utils/              → Logger utility
+  security/           → Security modules
+  chroma_db/          → Vector database storage
+  uploaded_files/     → Uploaded PDFs storage
+  logs/               → Application logs

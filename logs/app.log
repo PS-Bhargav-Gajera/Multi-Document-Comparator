@@ -1,0 +1,109 @@
+2026-06-30 01:00:07 | INFO     | rag.embeddings | Initializing Ollama embeddings: model=mxbai-embed-large:latest url=http://localhost:11434
+2026-06-30 01:00:07 | INFO     | rag.vectordb | Creating new ChromaDB collection: multi_doc_comparator
+2026-06-30 01:00:07 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 01:00:07 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 01:00:07 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 01:00:07 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 01:00:07 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 01:00:07 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 01:00:07 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 01:00:07 | INFO     | rag.chunker | Generated 121 chunks from 31 pages
+2026-06-30 01:00:07 | INFO     | rag.embeddings | Generating embeddings for 121 texts
+2026-06-30 01:00:12 | INFO     | rag.vectordb | Added 121 chunks to ChromaDB
+2026-06-30 01:00:12 | INFO     | rag.pipeline | Ingestion complete: 121 chunks stored
+2026-06-30 01:00:12 | INFO     | rag.pipeline | Processing query: What is the BERT architecture based on?
+2026-06-30 01:00:12 | INFO     | rag.reranker | MMR reranked 20 results to 8
+2026-06-30 01:00:12 | INFO     | rag.retriever | Retrieved 8 chunks after compression
+2026-06-30 01:00:12 | INFO     | rag.llm | Generating LLM response
+2026-06-30 01:02:21 | INFO     | rag.llm | LLM response received (tokens: I=2707 O=1354)
+2026-06-30 01:02:21 | INFO     | rag.vectordb | Creating new ChromaDB collection: multi_doc_comparator
+2026-06-30 01:02:21 | INFO     | rag.vectordb | Deleted and recreated collection
+2026-06-30 01:02:21 | INFO     | rag.pipeline | Vector database cleared
+2026-06-30 01:10:22 | INFO     | rag.embeddings | Initializing Ollama embeddings: model=mxbai-embed-large:latest url=http://localhost:11434
+2026-06-30 01:13:43 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 01:13:43 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 01:13:44 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 01:13:44 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 01:13:44 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 01:13:44 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 01:13:44 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 01:13:44 | INFO     | rag.chunker | Generated 121 chunks from 31 pages
+2026-06-30 01:13:44 | INFO     | rag.embeddings | Generating embeddings for 121 texts
+2026-06-30 01:13:49 | INFO     | rag.vectordb | Added 121 chunks to ChromaDB
+2026-06-30 01:13:49 | INFO     | rag.pipeline | Ingestion complete: 121 chunks stored
+2026-06-30 01:16:49 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 01:16:49 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 01:16:49 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 01:16:49 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 01:16:49 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 01:16:49 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 01:16:49 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 01:16:49 | INFO     | rag.chunker | Generated 121 chunks from 31 pages
+2026-06-30 01:16:49 | INFO     | rag.embeddings | Generating embeddings for 121 texts
+2026-06-30 01:16:54 | INFO     | rag.vectordb | Added 121 chunks to ChromaDB
+2026-06-30 01:16:54 | INFO     | rag.pipeline | Ingestion complete: 121 chunks stored
+2026-06-30 01:16:58 | INFO     | rag.vectordb | Creating new ChromaDB collection: multi_doc_comparator
+2026-06-30 01:16:58 | INFO     | rag.vectordb | Deleted and recreated collection
+2026-06-30 01:16:58 | INFO     | rag.pipeline | Vector database cleared
+2026-06-30 01:16:59 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 01:16:59 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 01:16:59 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 01:16:59 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 01:16:59 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 01:16:59 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 01:16:59 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 01:16:59 | INFO     | rag.chunker | Generated 121 chunks from 31 pages
+2026-06-30 01:16:59 | INFO     | rag.embeddings | Generating embeddings for 121 texts
+2026-06-30 01:17:04 | INFO     | rag.vectordb | Added 121 chunks to ChromaDB
+2026-06-30 01:17:04 | INFO     | rag.pipeline | Ingestion complete: 121 chunks stored
+2026-06-30 01:17:14 | INFO     | rag.pipeline | Processing query: copare both
+2026-06-30 01:17:14 | INFO     | rag.reranker | MMR reranked 20 results to 8
+2026-06-30 01:17:14 | INFO     | rag.retriever | Retrieved 8 chunks after compression
+2026-06-30 01:17:14 | INFO     | rag.llm | Generating LLM response
+2026-06-30 01:19:23 | INFO     | rag.llm | LLM response received (tokens: I=1632 O=1257)
+2026-06-30 01:30:14 | INFO     | rag.pipeline | Processing query: hat are the main similarities and differences between these two papers?
+2026-06-30 01:30:15 | INFO     | rag.reranker | MMR reranked 20 results to 8
+2026-06-30 01:30:15 | INFO     | rag.retriever | Retrieved 8 chunks after compression
+2026-06-30 01:30:15 | INFO     | rag.llm | Generating LLM response
+2026-06-30 01:32:16 | INFO     | rag.llm | LLM response received (tokens: I=2663 O=1457)
+2026-06-30 11:08:47 | INFO     | rag.embeddings | Initializing Ollama embeddings: model=mxbai-embed-large:latest url=http://localhost:11434
+2026-06-30 11:10:48 | INFO     | rag.embeddings | Initializing Ollama embeddings: model=mxbai-embed-large:latest url=http://localhost:11434
+2026-06-30 11:10:49 | INFO     | rag.vectordb | Initialized empty vector store
+2026-06-30 11:13:22 | INFO     | rag.embeddings | Initializing Ollama embeddings: model=mxbai-embed-large:latest url=http://localhost:11434
+2026-06-30 11:13:23 | INFO     | rag.vectordb | Initialized empty vector store
+2026-06-30 11:14:43 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 11:14:43 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 11:14:49 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 11:14:49 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 11:14:53 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 11:14:53 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 11:14:53 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 11:14:53 | INFO     | rag.chunker | Generated 123 chunks from 31 pages
+2026-06-30 11:14:53 | INFO     | rag.embeddings | Generating embeddings for 123 texts
+2026-06-30 11:15:14 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 11:15:14 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 11:15:19 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 11:15:19 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 11:15:22 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 11:15:22 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 11:15:22 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 11:15:22 | INFO     | rag.chunker | Generated 123 chunks from 31 pages
+2026-06-30 11:15:22 | INFO     | rag.embeddings | Generating embeddings for 123 texts
+2026-06-30 11:18:53 | INFO     | rag.pipeline | Ingesting 2 files
+2026-06-30 11:18:53 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 11:18:57 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 11:18:57 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 11:19:02 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 11:19:02 | INFO     | rag.cleaner | Cleaning 31 pages
+2026-06-30 11:19:02 | INFO     | rag.cleaner | After cleaning: 31 pages
+2026-06-30 11:19:02 | INFO     | rag.chunker | Generated 123 chunks from 31 pages
+2026-06-30 11:19:02 | INFO     | rag.embeddings | Generating embeddings for 123 texts
+2026-06-30 11:24:40 | INFO     | rag.vectordb | Added 123 chunks to vector store
+2026-06-30 11:24:40 | INFO     | rag.pipeline | Ingestion complete: 123 chunks stored
+2026-06-30 11:25:03 | INFO     | rag.pipeline | Processing query: give me the differce between two pdfs
+2026-06-30 11:25:05 | INFO     | rag.reranker | MMR reranked 20 results to 8
+2026-06-30 11:25:05 | INFO     | rag.retriever | Retrieved 8 chunks after compression
+2026-06-30 11:25:05 | INFO     | rag.llm | Generating LLM response
+2026-06-30 11:25:10 | WARNING  | rag.llm | LLM call failed (attempt 1), retrying...
+2026-06-30 11:25:12 | INFO     | rag.llm | Generating LLM response
+2026-06-30 11:26:29 | INFO     | rag.llm | LLM response received (tokens: I=2079 O=1532)
