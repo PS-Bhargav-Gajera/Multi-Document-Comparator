@@ -1,0 +1,71 @@
+Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+Microsoft Visual C++ Redistributable is not installed, this may lead to the DLL load failure.
+It can be downloaded at https://aka.ms/vs/17/release/vc_redist.x64.exe
+2026-06-30 16:23:39 | INFO     | rag.loader | Loading PDF: ateension all you need.pdf
+2026-06-30 16:23:51 | INFO     | rag.loader | Loaded 15 pages from ateension all you need.pdf
+2026-06-30 16:23:51 | INFO     | rag.loader | Loading PDF: bert.pdf
+2026-06-30 16:23:57 | INFO     | rag.loader | Loaded 16 pages from bert.pdf
+2026-06-30 16:23:58 | INFO     | rag.chunker | Generated 38 chunks from 31 pages
+Pages: 31 | Raw chunks (current): 38
+  0 ateension all you need p1    432tok 321w OK
+  1 ateension all you need p2    691tok 544w OK
+  2 ateension all you need p4    536tok 399w OK
+  3 ateension all you need p5    690tok 526w !! REPEATS:4; MID_SENTENCE
+      >> output values. These are concatenated and once again projected, resulting in the final values, as depicted in Figure 2. Multi-head attention allows the model to jointly attend to information from diff
+  4 ateension all you need p7    624tok 452w !! MID_SENTENCE
+      >> n dlength is smaller than the representation dimensionality , which is most often the case with sentence representations used by state-of-the-art models in machine translations, such as word-piece [38
+  5 ateension all you need p8    279tok 198w OK
+  6 ateension all you need p11   288tok 126w OK
+  7 ateension all you need p12   313tok 150w OK
+  8 ateension all you need p14   258tok 203w !! REPEATS:10
+      >> Input-Input Layer5 g >na d n >Soe de u Onw ae ap o eh e Eh pa e e e u p e ph h m mu nw w wT < <L n b p b a b a o e w e n d e e e g n n > >u ae mh b o b w n o S dw haInput-Input Layer5e u ub h aT aOL o
+  9 bert                   p1    562tok 338w OK
+ 10 bert                   p1    334tok 210w OK
+ 11 bert                   p2    664tok 423w !! MID_SENTENCE
+      >> word based only on its context. Unlike left-to- These approaches have been generalized to right language model pre-training, the MLM ob- coarser granularities, such as sentence embed- jective enables 
+ 12 bert                   p2    471tok 286w OK
+ 13 bert                   p3    664tok 425w !! REPEATS:9
+      >> SQuADMNLI NERNSP Mask LM Mask LM Start/End Span C CT ... T T T ’ ... T ’ T ... T T T ’ ... T ’ BERT BERT BERT E ... E E ’ ... E ’ E ... E E ’ ... E ’ E E Masked Sentence A QuestionMasked Sentence B Pa
+ 14 bert                   p3    274tok 161w !! MID_SENTENCE
+      >> data over different pre-training tasks. For ﬁne- BERT was chosen to have the same modelBASE tuning, the BERT model is ﬁrst initialized with size as OpenAI GPT for comparison purposes. the pre-trained 
+ 15 bert                   p4    666tok 463w OK
+ 16 bert                   p4    566tok 371w OK
+ 17 bert                   p5    670tok 462w !! REPEATS:38
+      >> Input my dog is cute he likes play ing## Token E E E E E E E E E E EEmbeddings Segment E E E E E E E E E E E Embeddings A A A A A A B B B B B Position E E E E E E E E E E E Embeddings 0 1 2 3 4 5 6 7 
+ 18 bert                   p5    355tok 225w OK
+ 19 bert                   p6    689tok 345w OK
+ 20 bert                   p6    697tok 448w OK
+ 21 bert                   p7    689tok 310w !! REPEATS:6
+      >> System Dev Test System Dev Test EM F1 EM F1 ESIM+GloVe 51.9 52.7 Top Leaderboard Systems (Dec 10th, 2018) ESIM+ELMo 59.1 59.2 Human - - 82.3 91.2 OpenAI GPT - 78.0 #1 Ensemble - nlnet - - 86.0 91.7 BE
+ 22 bert                   p7    592tok 367w OK
+ 23 bert                   p8    695tok 445w !! MID_SENTENCE
+      >> results are still far worse than those of the pre-Dev Set Tasks MNLI-m QNLI MRPC SST-2 SQuAD trained bidirectional models. The BiLSTM hurts (Acc) (Acc) (Acc) (Acc) (F1) performance on the GLUE tasks. 
+ 24 bert                   p8    501tok 339w OK
+ 25 bert                   p9    699tok 439w !! MID_SENTENCE
+      >> mixed results on the downstream task impact of System Dev F1 Test F1 increasing the pre-trained bi-LM size from two ELMo (Peters et al., 2018a) 95.7 92.2 CVT (Clark et al., 2018) - 92.6to four layers 
+ 26 bert                   p9    387tok 232w OK
+ 27 bert                   p10   695tok 350w OK
+ 28 bert                   p10   571tok 274w !! MID_SENTENCE
+      >> on Paraphrasing (IWP2005). EMNLPIn . Association for Computational Linguis- tics. William Fedus, Ian Goodfellow, and Andrew M Dai. 2018. Maskgan: Better text generation via ﬁlling in arXiv preprint ar
+ 29 bert                   p11   700tok 343w OK
+ 30 bert                   p11   681tok 323w OK
+ 31 bert                   p12   680tok 407w OK
+ 32 bert                   p12   319tok 219w OK
+ 33 bert                   p13   680tok 458w OK
+ 34 bert                   p14   690tok 470w OK
+ 35 bert                   p14   342tok 219w OK
+ 36 bert                   p15   542tok 364w !! REPEATS:18
+      >> Class Class Label Label ... TC T T... ...C T T T T ’ T ’ BERT BERT ... ... ...E E E E ’ E ’ EE E E Tok 1 Tok N ... ... Tok 1 ...Tok 2 Sentence 1 Sentence 2 Single Sentence ...Start/End Span O B-PER O 
+ 37 bert                   p16   703tok 460w !! MID_SENTENCE
+      >> jority class. Note that the purpose of the masking strategies is to reduce the mismatch between pre-training C Additional Ablation Studies [MASK]and ﬁne-tuning, as the symbol never ap- pears during th
+SUMMARY: total=38 problem_chunks=13 duplicates=0
+Saved baseline_chunks.json

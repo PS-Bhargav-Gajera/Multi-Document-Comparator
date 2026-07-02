@@ -35,8 +35,8 @@ SIMILARITY_METRIC: str = os.getenv("SIMILARITY_METRIC", "cosine")
 MAX_CONTEXT_TOKENS: int = int(os.getenv("MAX_CONTEXT_TOKENS", "12000"))
 
 # ── Chunking ────────────────────────────────────────────────────────────────
-CHUNK_SIZE_TOKENS: int = 300
-CHUNK_OVERLAP_TOKENS: int = 50
+CHUNK_SIZE_TOKENS: int = 500
+CHUNK_OVERLAP_TOKENS: int = 80
 TIKTOKEN_ENCODING: str = "o200k_base"  # encoding for token counting (maps to GPT-4o)
 
 # ── File Upload Limits ───────────────────────────────────────────────────────

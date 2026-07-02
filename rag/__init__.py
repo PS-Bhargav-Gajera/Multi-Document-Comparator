@@ -1,5 +1,4 @@
 from rag.loader import PDFLoader
-from rag.cleaner import TextCleaner
 from rag.chunker import SemanticChunker
 from rag.embeddings import EmbeddingGenerator
 from rag.vectordb import VectorDatabase
@@ -11,7 +10,6 @@ from rag.reranker import MMRReranker
 
 __all__ = [
     "PDFLoader",
-    "TextCleaner",
     "SemanticChunker",
     "EmbeddingGenerator",
     "VectorDatabase",

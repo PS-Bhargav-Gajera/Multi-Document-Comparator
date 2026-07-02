@@ -54,24 +54,40 @@ class VectorDatabase:
         self, chunks: List[Dict[str, Any]],
         embeddings: Optional[List[List[float]]] = None,
     ):
-        texts = [c["text"] for c in chunks]
-        metadatas = [c["metadata"] for c in chunks]
-        ids = [c["metadata"]["chunk_id"] for c in chunks]
+        existing_ids = set(self.ids)
+        new_texts: list[str] = []
+        new_metadatas: list[dict] = []
+        new_ids: list[str] = []
+        new_embeddings: list[list[float]] = []
 
-        if embeddings is None:
-            raise ValueError("Embeddings are required")
-        emb_array = np.array(embeddings, dtype=np.float32)
+        for i, c in enumerate(chunks):
+            chunk_id = c["metadata"]["chunk_id"]
+            if chunk_id in existing_ids:
+                logger.warning("Skipping duplicate chunk: %s", chunk_id)
+                continue
+            existing_ids.add(chunk_id)
+            new_texts.append(c["text"])
+            new_metadatas.append(c["metadata"])
+            new_ids.append(chunk_id)
+            if embeddings is not None:
+                new_embeddings.append(embeddings[i])
+
+        if not new_ids:
+            logger.info("No new chunks to add (all duplicates)")
+            return
+
+        emb_array = np.array(new_embeddings, dtype=np.float32)
 
         if self.embeddings.size == 0:
             self.embeddings = emb_array
         else:
             self.embeddings = np.vstack([self.embeddings, emb_array])
 
-        self.texts.extend(texts)
-        self.metadata.extend(metadatas)
-        self.ids.extend(ids)
+        self.texts.extend(new_texts)
+        self.metadata.extend(new_metadatas)
+        self.ids.extend(new_ids)
         self._save()
-        logger.info("Added %d chunks to vector store", len(chunks))
+        logger.info("Added %d new chunks (%d duplicates skipped)", len(new_ids), len(chunks) - len(new_ids))
 
     def similarity_search(
         self, query_embedding: List[float], k: int = 20

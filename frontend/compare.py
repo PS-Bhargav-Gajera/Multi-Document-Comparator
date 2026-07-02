@@ -79,6 +79,5 @@ def render_stats():
     if stats:
         with st.expander("📊 Ingestion Statistics", expanded=False):
             st.markdown(f"- **Pages loaded:** {stats['pages']}")
-            st.markdown(f"- **Pages after cleaning:** {stats['cleaned_pages']}")
             st.markdown(f"- **Chunks generated:** {stats['chunks']}")
             st.markdown(f"- **Total chunks in DB:** {stats['total_chunks']}")

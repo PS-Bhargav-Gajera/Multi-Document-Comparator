@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional, Callable
 import numpy as np
 from utils.logger import get_logger
 
@@ -60,5 +60,42 @@ class MMRReranker:
             candidate_indices.remove(best_idx)
 
         reranked = [results[i] for i in selected]
-        logger.info("MMR reranked %d results to %d", len(results), len(reranked))
         return reranked
+
+
+class LLMReranker:
+    def __init__(self, llm_generate_fn: Optional[Callable] = None):
+        self._generate = llm_generate_fn
+
+    def rerank(
+        self,
+        query: str,
+        chunks: List[Dict[str, Any]],
+        top_k: int = 5,
+    ) -> List[Dict[str, Any]]:
+        if not self._generate or not chunks:
+            return chunks
+
+        scored = []
+        for chunk in chunks:
+            relevance = self._score_chunk(query, chunk["text"])
+            scored.append((relevance, chunk))
+
+        scored.sort(key=lambda x: x[0], reverse=True)
+        reranked = [s[1] for s in scored[:top_k]]
+        logger.info("LLM reranked %d chunks to %d", len(chunks), len(reranked))
+        return reranked
+
+    def _score_chunk(self, query: str, chunk_text: str) -> float:
+        prompt = (
+            f"Query: {query}\n\n"
+            f"Chunk: {chunk_text[:500]}\n\n"
+            f"On a scale of 0.0 to 1.0, how relevant is this chunk to answering the query? "
+            f"Respond with ONLY a number between 0 and 1."
+        )
+        try:
+            response = self._generate("", prompt)
+            score = float(response.strip()[:4])
+            return max(0.0, min(1.0, score))
+        except Exception:
+            return 0.5

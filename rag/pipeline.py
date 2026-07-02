@@ -1,7 +1,6 @@
 from typing import List, Dict, Any, Optional
 
 from rag.loader import PDFLoader
-from rag.cleaner import TextCleaner
 from rag.chunker import SemanticChunker
 from rag.embeddings import EmbeddingGenerator
 from rag.vectordb import VectorDatabase
@@ -17,11 +16,10 @@ logger = get_logger(__name__)
 class RAGPipeline:
     def __init__(self):
         self.loader = PDFLoader()
-        self.cleaner = TextCleaner()
         self.chunker = SemanticChunker()
         self.embedder = EmbeddingGenerator()
         self.vector_db = VectorDatabase()
-        self.reranker = MMRReranker()
+        self.reranker = MMRReranker(lambda_param=0.7)
         self.retriever = Retriever(
             embedder=self.embedder,
             vector_db=self.vector_db,
@@ -33,8 +31,7 @@ class RAGPipeline:
     def ingest(self, file_paths: List[str]) -> dict:
         logger.info("Ingesting %d files", len(file_paths))
         pages = self.loader.load_all(file_paths)
-        cleaned = self.cleaner.clean(pages)
-        chunks = self.chunker.chunk(cleaned)
+        chunks = self.chunker.chunk(pages)
         texts = [c["text"] for c in chunks]
         embeddings = self.embedder.embed_documents(texts)
         self.vector_db.add_chunks(chunks, embeddings=embeddings)
@@ -42,7 +39,6 @@ class RAGPipeline:
         logger.info("Ingestion complete: %d chunks stored", stats["total_chunks"])
         return {
             "pages": len(pages),
-            "cleaned_pages": len(cleaned),
             "chunks": len(chunks),
             "total_chunks": stats["total_chunks"],
         }
@@ -57,10 +53,14 @@ class RAGPipeline:
                 "sources": [],
             }
 
+        intent = self.prompts.detect_intent(question)
+        logger.info("Detected intent: %s", intent.value)
+
         context = self.prompts.format_chunks_for_context(chunks)
         user_prompt = self.prompts.format_user_prompt(
             retrieved_context=context,
             user_question=question,
+            intent=intent,
         )
         system_prompt = self.prompts.get_system_prompt()
 

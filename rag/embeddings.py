@@ -1,3 +1,4 @@
+import numpy as np
 import tiktoken
 from langchain_ollama import OllamaEmbeddings
 from config import OLLAMA_BASE_URL, EMBED_MODEL, TIKTOKEN_ENCODING
@@ -6,7 +7,7 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 _embeddings_cache: "OllamaEmbeddings | None" = None
-_MAX_EMBED_TOKENS = 500
+_MAX_EMBED_TOKENS = 512
 
 
 class EmbeddingGenerator:
@@ -27,20 +28,25 @@ class EmbeddingGenerator:
     def _truncate(self, text: str) -> str:
         tokens = self.encoding.encode(text)
         if len(tokens) > _MAX_EMBED_TOKENS:
-            logger.warning(
-                "Truncating text from %d to %d tokens for embedding",
-                len(tokens), _MAX_EMBED_TOKENS,
-            )
             tokens = tokens[:_MAX_EMBED_TOKENS]
             return self.encoding.decode(tokens)
         return text
+
+    def _normalize(self, vec: list[float]) -> list[float]:
+        arr = np.array(vec, dtype=np.float32)
+        norm = np.linalg.norm(arr)
+        if norm > 0:
+            arr = arr / norm
+        return arr.tolist()
 
     def embed_documents(self, texts: list[str]) -> list[list[float]]:
         logger.info("Generating embeddings for %d texts", len(texts))
         truncated = [self._truncate(t) for t in texts]
         embeddings = self.client.embed_documents(truncated)
-        return embeddings
+        normalized = [self._normalize(e) for e in embeddings]
+        return normalized
 
     def embed_query(self, text: str) -> list[float]:
         truncated = self._truncate(text)
-        return self.client.embed_query(truncated)
+        embedding = self.client.embed_query(truncated)
+        return self._normalize(embedding)
